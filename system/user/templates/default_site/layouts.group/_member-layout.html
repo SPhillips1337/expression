@@ -1,0 +1,16 @@
+{layout='layouts/_html-wrapper'}
+
+{!-- embed for breadcrumb, needed to pass arguments (embeds aren't evil) --}
+{layout:set name='breadcrumbs'}
+	{embed='common/_breadcrumb'
+		p_url='{layout:p_url}'
+		p_title='{layout:p_title}'
+		{if layout:entry_ch}entry_ch='{layout:entry_ch}'{/if}
+	}
+{/layout:set}
+
+		<section class="row reverse pad">
+			<section class="w-12">
+				{layout:contents}
+			</section>
+		</section>

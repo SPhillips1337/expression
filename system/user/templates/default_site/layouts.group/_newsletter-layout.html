@@ -1,0 +1,20 @@
+{layout='layouts/_html-wrapper'}
+
+{!-- embed for breadcrumb, needed to pass arguments (embeds aren't evil) --}
+{layout:set name='breadcrumbs'}
+	{embed='common/_breadcrumb'
+		p_url='{layout:p_url}'
+		p_title='{layout:p_title}'
+	}
+{/layout:set}
+
+{layout:set name='scripts'}
+	<script src="{theme_user_folder_url}site/default/asset/js/plugins/validate.min.js"></script>
+	{layout:scripts}
+{/layout:set}
+
+		<section class="row pad">
+			<section class="w-8">
+				{layout:contents}
+			</section>
+		</section>
