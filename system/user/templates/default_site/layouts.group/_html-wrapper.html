@@ -50,20 +50,30 @@
 				{if segment_1 AND segment_1 != 'newsletter'}
 				<div class="newsletter">
 				<section class="row reverse">
-				  <section class="w-8">
-					{exp:channel:form channel="newsletter" return="newsletter/thanks" class="newsletter_form"}
-						  <fieldset class="row">
-							  <section class="w-4 instruct">
-								  <label>Email <span class="required" title="required field">&#10033;</span></label>
-							  </section>
-							  <section class="w-12 field">
-								  <input class="required" name="newsletter-email" type="text" value="">
-							  </section>
-						  </fieldset>
-						  <fieldset class="ctrls">
-							  <input class="btn" type="submit" value="Sign Up">
-						  </fieldset>
-					{/exp:channel:form}		  
+				  <section class="w-4">
+					  
+					<h2>Newsletter</h2>
+						<?php
+						ee()->load->helper('form');
+						echo form_open('newsletter/signup');
+						$data = array(
+							'name'      => 'newsletter_email',
+							'id'        => 'newsletter_email',
+							'value'     => '',
+							'maxlength' => '100',
+							'size'      => '50',
+							'style'     => 'width:100%'
+						);
+						
+						echo form_input($data);
+						$attributes = array(
+							'class' => 'ctrls'
+						);
+						echo form_fieldset('', $attributes );
+						
+						echo form_submit('newsletter_submit', 'Sign Up!', 'class="btn right"');
+						?>
+
 					  </section>		
 				  </section>			  
 				</div>			

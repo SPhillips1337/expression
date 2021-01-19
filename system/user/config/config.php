@@ -1,5 +1,6 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+$config['enable_devlog_alerts'] = 'n';
 $config['save_tmpl_files'] = 'y';
 // ExpressionEngine Config Items
 // Find more configs and overrides at
@@ -21,5 +22,6 @@ $config['database'] = array(
 	),
 );
 $config['show_ee_news'] = 'y';
+$config['allow_php'] = 'y';
 $config['legacy_member_templates'] = 'y';
 // EOF
