@@ -40,7 +40,8 @@
 			<h1>{title}</h1>
 			{!-- page_content is a textarea with HTML output we don't need to wrap this tag with HTML as that is already included in it's output. --}
 			{page_content}
-			{!-- /content output --}
+			{!-- /content output --}	
+
 			{exp:member:login_form}
 
 				<label>Username</label><br />
@@ -51,6 +52,7 @@
 				<input type="submit" name="submit" value="Submit" />
 		
 			{/exp:member:login_form}
+
 			{!--
 				no results redirect
 				===================

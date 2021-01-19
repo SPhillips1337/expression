@@ -21,5 +21,5 @@ $config['database'] = array(
 	),
 );
 $config['show_ee_news'] = 'y';
-//$config['legacy_member_templates'] = 'y';
+$config['legacy_member_templates'] = 'y';
 // EOF
