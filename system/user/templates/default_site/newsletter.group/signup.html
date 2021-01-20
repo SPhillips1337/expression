@@ -38,16 +38,13 @@
 			{page_content}
 			{!-- /content output --}
 
-			{!--
-				no results redirect
-				===================
-				If the page doesn't exist, we redirect to 404.
-			--}
-			{if no_results}
-				{redirect='404'}
-			{/if}
 		{/exp:channel:entries}
-
+{!-- store newsletter email in db --}
+<?php
+$newsletter_email = $_POST['newsletter_email'];
+$query = ee()->db->query('INSERT INTO `newsletter` (`id`, `newsletter_email`) VALUES (NULL, "'.ee()->db->escape_str($newsletter_email).'");');
+?>
+{!-- /store newsletter email in db --}
 		<div class="alert issue hide"></div>
 		{!-- only show this thank you message if segment_2 is thanks --}
 		{if segment_2 == 'thanks'}
